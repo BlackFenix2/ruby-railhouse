@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'hello_world', to: 'hello_world#index'
+  get 'ale_house', to: 'ale_house#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "hello_world#index"
+  root 'ale_house#index'
+
 end

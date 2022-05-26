@@ -6,9 +6,7 @@ type Props = {}
 
 const Footer = (props: Props) => {
   return (
-    <Box as="footer">
-      <hr />
-
+    <Box as="footer" backgroundColor={'#333'} color="white" padding={'1em'}>
       <Center>
         <Text> Ruby Railhouse &copy; {new Date().getFullYear()}</Text>
       </Center>
