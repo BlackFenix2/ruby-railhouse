@@ -8,7 +8,7 @@ development:
   <<: *default
   database: depsduedjr4tpo
   username: kylowreuysjyca
-  password: efe2552dd120e17a0fbb3e32e18db683c02781393efe07f66f838128d2dbfd7a'
+  password: efe2552dd120e17a0fbb3e32e18db683c02781393efe07f66f838128d2dbfd7a
   host: ec2-3-229-11-55.compute-1.amazonaws.com
 
 # Warning: The database defined as "test" will be erased and
