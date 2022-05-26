@@ -1,3 +1,4 @@
+import { Box, Center, Heading } from '@chakra-ui/react'
 import { css } from '@emotion/css'
 import * as React from 'react'
 
@@ -5,21 +6,11 @@ type Props = {}
 
 const Header = (props: Props) => {
   return (
-    <header
-      className={css`
-        background-color: #333;
-        color: #fff;
-        height: 60px;
-      `}
-    >
-      <nav
-        className={css`
-          padding-left: 1em;
-        `}
-      >
-        <h1>Ruby's R(ale) House</h1>
-      </nav>
-    </header>
+    <Box as="header" backgroundColor={'#333'} color={'white'}>
+      <Box as="nav" height={'100%'} padding={'1em'}>
+        <Heading as="h1">Ruby's R(ale) House</Heading>
+      </Box>
+    </Box>
   )
 }
 

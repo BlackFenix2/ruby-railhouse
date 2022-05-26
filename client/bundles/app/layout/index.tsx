@@ -1,4 +1,4 @@
-import { css } from '@emotion/css'
+import { Flex } from '@chakra-ui/react'
 import * as React from 'react'
 import Footer from './Footer'
 import Header from './Header'
@@ -8,17 +8,11 @@ type Props = {}
 
 const Layout = (props: Props) => {
   return (
-    <div
-      className={css`
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      `}
-    >
+    <Flex direction={'column'} minH={'100vh'}>
       <Header />
       <Main />
       <Footer />
-    </div>
+    </Flex>
   )
 }
 

@@ -1,3 +1,4 @@
+import { Box, Center, Text } from '@chakra-ui/react'
 import { css } from '@emotion/css'
 import * as React from 'react'
 
@@ -5,22 +6,13 @@ type Props = {}
 
 const Footer = (props: Props) => {
   return (
-    <footer>
+    <Box as="footer">
       <hr />
-      <div
-        className={css`
-          padding-left: 1em;
-        `}
-      >
-        <p
-          className={css`
-            text-align: center;
-          `}
-        >
-          Ruby Railhouse &copy; {new Date().getFullYear()}
-        </p>
-      </div>
-    </footer>
+
+      <Center>
+        <Text> Ruby Railhouse &copy; {new Date().getFullYear()}</Text>
+      </Center>
+    </Box>
   )
 }
 
