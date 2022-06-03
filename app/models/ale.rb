@@ -1,0 +1,2 @@
+class Ale < ApplicationRecord
+end

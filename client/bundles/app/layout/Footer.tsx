@@ -1,5 +1,4 @@
 import { Box, Center, Text } from '@chakra-ui/react'
-import { css } from '@emotion/css'
 import * as React from 'react'
 
 type Props = {}

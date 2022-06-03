@@ -1,0 +1,17 @@
+{
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "castwide.solargraph"
+  },
+  "[gemfile]": {
+    "editor.defaultFormatter": "castwide.solargraph"
+  },
+
+  "editor.formatOnSave": true,
+  "solargraph.autoformat": true,
+  "solargraph.diagnostics": true,
+  "solargraph.formatting": true,
+  "ruby.useLanguageServer": true
+}

@@ -2,10 +2,12 @@
   "name": "app",
   "private": true,
   "scripts": {
+    "prepare": "bundle",
     "start": "node server.js",
     "dev": "foreman start -f Procfile.dev",
     "dev:static": "foreman start -f Procfile.dev-static",
-    "deploy": "git push heroku main"
+    "deploy": "git push heroku main",
+    "migrate": "bin/rails db:migrate"
   },
   "dependencies": {
     "@babel/core": "7",
