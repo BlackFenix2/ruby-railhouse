@@ -1,8 +1,8 @@
 default: &default
   adapter: postgresql
-  username: skbpknvqozqudn
-  password: b835dde675bed7673a422dfb7ecd668dba1d35d1a88bcd9590c9f89a17110f36
-  host: ec2-3-228-235-79.compute-1.amazonaws.com
+  username: xpikekdshxruap
+  password: bde4de4ae189efd4e806a6feb8b5fb27bb14d3f9861da039c0ae99924254d5fa
+  host: ec2-54-147-33-38.compute-1.amazonaws.com
 
 development:
   <<: *default
@@ -16,8 +16,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: d27483errr5vbd
+  database: d9vsiormkendn7
 
 production:
   <<: *default
-  database: d27483errr5vbd
+  database: d9vsiormkendn7
