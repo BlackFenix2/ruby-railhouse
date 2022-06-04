@@ -9,4 +9,8 @@ class AleController < ApplicationController
   def show
     @ale_house_props = { ale: Ale.find(params[:id]) }
   end
+
+  def edit
+    @ale_house_props = { ale: Ale.find(params[:id]) }
+  end
 end

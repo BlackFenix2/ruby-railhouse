@@ -48,9 +48,7 @@ const Main = (props: Props) => {
           <Divider></Divider>
         </Box>
         <ButtonGroup>
-          <Button as="a" href={`/ale/${ale.id}/edit`}>
-            Edit
-          </Button>
+          <Button>Save Changes</Button>
           <Button>Delete</Button>
           <Button as="a" href="/">
             Go Back

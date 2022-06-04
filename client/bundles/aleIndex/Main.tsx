@@ -1,4 +1,12 @@
-import { Box, Flex, Heading, Text } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Divider,
+  Flex,
+  Heading,
+  Text
+} from '@chakra-ui/react'
 import { css } from '@emotion/css'
 import * as React from 'react'
 import { useAppContext } from '../app/state/useAppContext'
@@ -16,10 +24,6 @@ type Props = {
 }
 
 const Main = (props: Props) => {
-  const [name, setName] = React.useState('stranger')
-
-  const value = useAppContext()
-
   return (
     <Flex
       as="main"
@@ -35,14 +39,23 @@ const Main = (props: Props) => {
 
         {props.aleList.map((ale) => (
           <Box>
-            <Heading as="h3">{ale.title}</Heading>
+            <Heading as="h3" textTransform={'uppercase'}>
+              {ale.title}
+            </Heading>
             <Text>{ale.description}</Text>
             <Text>{ale.price}</Text>
             <Text>{ale.imageUrl}</Text>
+            <Divider paddingY={2}></Divider>
+            <ButtonGroup>
+              <Button as="a" href={`/ale/${ale.id}`}>
+                View
+              </Button>
+              <Button as="a" href={`/ale/${ale.id}/edit`}>
+                Edit
+              </Button>
+            </ButtonGroup>
           </Box>
         ))}
-        <Text>{JSON.stringify(props.aleList, null, 4)}</Text>
-        <Text>{JSON.stringify(value, null, 4)}</Text>
       </Box>
     </Flex>
   )

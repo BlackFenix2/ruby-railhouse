@@ -1,9 +1,16 @@
 import * as React from 'react'
-
-type Props = {}
-
-const AleEdit = (props: Props) => {
-  return () => <div>index</div>
+import AppContainer from '../app'
+import Main from './Main'
+type Props = {
+  ale: any
 }
 
-export default AleEdit
+const Edit = (props: Props, railsContext) => {
+  return () => (
+    <AppContainer railsContext={railsContext}>
+      <Main ale={props.ale} />
+    </AppContainer>
+  )
+}
+
+export default Edit
