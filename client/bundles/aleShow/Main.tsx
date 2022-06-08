@@ -9,21 +9,16 @@ import {
 } from '@chakra-ui/react'
 import { css } from '@emotion/css'
 import * as React from 'react'
+import DeleteButton from '../app/components/DeleteButton'
 import { useAppContext } from '../app/state/useAppContext'
+import { Ale } from '../app/types/ale'
 
 type Props = {
-  ale: {
-    id: number
-    title: string
-    description: string
-    price: number
-    imageUrl: string
-  }
+  ale: Ale
+  token: string
 }
 
 const Main = (props: Props) => {
-  const [name, setName] = React.useState('stranger')
-
   const value = useAppContext()
   const { ale } = props
 
@@ -51,7 +46,10 @@ const Main = (props: Props) => {
           <Button as="a" href={`/ale/${ale.id}/edit`}>
             Edit
           </Button>
-          <Button>Delete</Button>
+          <DeleteButton action={`/ale/${ale.id}`} token={props.token}>
+            Delete
+          </DeleteButton>
+
           <Button as="a" href="/">
             Go Back
           </Button>

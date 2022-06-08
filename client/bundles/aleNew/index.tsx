@@ -1,12 +1,17 @@
 import * as React from 'react'
 import AppContainer from '../app'
+import { Ale } from '../app/types/ale'
+import Main from './Main'
 
-type Props = {}
+type Props = {
+  ale: Ale
+  token: string
+}
 
 const New = (props: Props, railsContext) => {
-  return (
+  return () => (
     <AppContainer railsContext={railsContext}>
-      <div>New</div>
+      <Main {...props}></Main>
     </AppContainer>
   )
 }

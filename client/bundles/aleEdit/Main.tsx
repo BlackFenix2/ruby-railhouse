@@ -9,24 +9,18 @@ import {
 } from '@chakra-ui/react'
 import { css } from '@emotion/css'
 import * as React from 'react'
+import AleForm from '../app/components/AleForm'
 import { useAppContext } from '../app/state/useAppContext'
+import { Ale } from '../app/types/ale'
 
 type Props = {
-  ale: {
-    id: number
-    title: string
-    description: string
-    price: number
-    imageUrl: string
-  }
+  ale: Ale
+  token: string
 }
 
 const Main = (props: Props) => {
-  const [name, setName] = React.useState('stranger')
-
-  const value = useAppContext()
   const { ale } = props
-
+  console.log(props.token)
   return (
     <Flex
       as="main"
@@ -36,24 +30,12 @@ const Main = (props: Props) => {
       flexGrow={1}
     >
       <Box backgroundColor={'white'} borderRadius="10px" padding={4}>
-        <Box>
-          <Heading as="h3" textTransform={'uppercase'}>
-            {ale.title}
-          </Heading>
-          <Text>{ale.description}</Text>
-          <Text>{ale.price}</Text>
-          <Text>{ale.imageUrl}</Text>
-        </Box>
-        <Box paddingY={2}>
-          <Divider></Divider>
-        </Box>
-        <ButtonGroup>
-          <Button>Save Changes</Button>
-          <Button>Delete</Button>
-          <Button as="a" href="/">
-            Go Back
-          </Button>
-        </ButtonGroup>
+        <AleForm
+          ale={props.ale}
+          token={props.token}
+          method="patch"
+          action={`/ale/${props.ale.id}`}
+        ></AleForm>
       </Box>
     </Flex>
   )

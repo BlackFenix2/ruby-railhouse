@@ -5,6 +5,7 @@ import {
   Divider,
   Flex,
   Heading,
+  Image,
   Text
 } from '@chakra-ui/react'
 import { css } from '@emotion/css'
@@ -42,9 +43,13 @@ const Main = (props: Props) => {
             <Heading as="h3" textTransform={'uppercase'}>
               {ale.title}
             </Heading>
+            <Image
+              src={ale?.imageUrl ?? 'https://via.placeholder.com/300'}
+              width={'300px'}
+            ></Image>
             <Text>{ale.description}</Text>
             <Text>{ale.price}</Text>
-            <Text>{ale.imageUrl}</Text>
+
             <Divider paddingY={2}></Divider>
             <ButtonGroup>
               <Button as="a" href={`/ale/${ale.id}`}>

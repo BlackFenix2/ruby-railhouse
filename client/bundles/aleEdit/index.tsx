@@ -3,12 +3,13 @@ import AppContainer from '../app'
 import Main from './Main'
 type Props = {
   ale: any
+  token: string
 }
 
 const Edit = (props: Props, railsContext) => {
   return () => (
     <AppContainer railsContext={railsContext}>
-      <Main ale={props.ale} />
+      <Main {...props} />
     </AppContainer>
   )
 }
