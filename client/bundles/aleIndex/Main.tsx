@@ -37,6 +37,9 @@ const Main = (props: Props) => {
         <Heading as="h3">
           Hello Stranger! The Alehouse is opening soon in the Ruby Railhouse!
         </Heading>
+        <Button as="a" href="/ale/new">
+          New Drink!
+        </Button>
 
         {props.aleList.map((ale) => (
           <Box>
