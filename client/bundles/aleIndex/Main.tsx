@@ -10,11 +10,9 @@ import {
   Wrap,
   WrapItem
 } from '@chakra-ui/react'
-import { css } from '@emotion/css'
 import * as React from 'react'
 import Card from '../app/components/Card'
 import { FaPen, FaEye, FaPlus } from 'react-icons/fa'
-import { useAppContext } from '../app/state/useAppContext'
 import type { Ale } from '../app/types/ale'
 
 type Props = {
@@ -57,7 +55,9 @@ const Main = (props: Props) => {
                   width="100%"
                 >
                   <Text>{ale.description}</Text>
-                  <Text fontWeight={'bold'}>{`$${ale.price}`}</Text>
+                  <Text fontWeight={'bold'}>{`$${Number(ale.price).toFixed(
+                    2
+                  )}`}</Text>
                 </Box>
 
                 <Divider></Divider>
