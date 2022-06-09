@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react'
 import { css } from '@emotion/css'
 import * as React from 'react'
+import AleForm from '../app/components/AleForm'
 import DeleteButton from '../app/components/DeleteButton'
 import { useAppContext } from '../app/state/useAppContext'
 import { Ale } from '../app/types/ale'
@@ -31,29 +32,13 @@ const Main = (props: Props) => {
       flexGrow={1}
     >
       <Box backgroundColor={'white'} borderRadius="10px" padding={4}>
-        <Box>
-          <Heading as="h3" textTransform={'uppercase'}>
-            {ale.title}
-          </Heading>
-          <Text>{ale.description}</Text>
-          <Text>{ale.price}</Text>
-          <Text>{ale.imageUrl}</Text>
-        </Box>
-        <Box paddingY={2}>
-          <Divider></Divider>
-        </Box>
-        <ButtonGroup>
-          <Button as="a" href={`/ale/${ale.id}/edit`}>
-            Edit
-          </Button>
-          <DeleteButton action={`/ale/${ale.id}`} token={props.token}>
-            Delete
-          </DeleteButton>
-
-          <Button as="a" href="/">
-            Go Back
-          </Button>
-        </ButtonGroup>
+        <AleForm
+          ale={props.ale}
+          token={props.token}
+          isReadonly
+          method="patch"
+          action={`/ale/${props.ale.id}`}
+        ></AleForm>
       </Box>
     </Flex>
   )

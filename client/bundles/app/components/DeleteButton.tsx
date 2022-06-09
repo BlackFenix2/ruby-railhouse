@@ -1,5 +1,6 @@
 import { Button } from '@chakra-ui/react'
 import * as React from 'react'
+import { FaTrash } from 'react-icons/fa'
 
 type Props = {
   action: string
@@ -22,7 +23,9 @@ const DeleteButton = (props: Props) => {
         value={props.token}
       ></input>
       <input name="_method" type="hidden" value="delete" />
-      <Button type="submit">{props.children}</Button>
+      <Button type="submit" leftIcon={<FaTrash />}>
+        {props.children}
+      </Button>
     </form>
   )
 }
