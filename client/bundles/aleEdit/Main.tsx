@@ -11,7 +11,7 @@ import { css } from '@emotion/css'
 import * as React from 'react'
 import AleForm from '../app/components/AleForm'
 import { useAppContext } from '../app/state/useAppContext'
-import { Ale } from '../app/types/ale'
+import type { Ale } from '../app/types/ale'
 
 type Props = {
   ale: Ale

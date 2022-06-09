@@ -15,17 +15,10 @@ import * as React from 'react'
 import Card from '../app/components/Card'
 import { FaPen, FaEye, FaPlus } from 'react-icons/fa'
 import { useAppContext } from '../app/state/useAppContext'
+import type { Ale } from '../app/types/ale'
 
 type Props = {
-  aleList: [
-    {
-      id: number
-      title: string
-      description: string
-      price: number
-      imageUrl: string
-    }
-  ]
+  aleList: Ale[]
 }
 
 const Main = (props: Props) => {

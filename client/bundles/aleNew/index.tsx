@@ -1,6 +1,6 @@
 import * as React from 'react'
 import AppContainer from '../app'
-import { Ale } from '../app/types/ale'
+import type { Ale } from '../app/types/ale'
 import Main from './Main'
 
 type Props = {

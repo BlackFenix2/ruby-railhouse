@@ -4,6 +4,7 @@
   "scripts": {
     "prepare": "bundle",
     "start": "node server.js",
+    "lint": "eslint client  --fix",
     "dev": "foreman start -f Procfile.dev",
     "dev:static": "foreman start -f Procfile.dev-static",
     "deploy": "git push heroku main",
@@ -51,6 +52,9 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.1",
     "fork-ts-checker-webpack-plugin": "^7.2.11",
     "heroku": "^7.60.2",
     "react-refresh": "^0.13.0",

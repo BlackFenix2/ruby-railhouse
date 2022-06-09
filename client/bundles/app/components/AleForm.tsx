@@ -8,7 +8,7 @@ import {
 import * as React from 'react'
 import { useForm } from 'react-hook-form'
 import { FaPen, FaSave, FaArrowLeft } from 'react-icons/fa'
-import { Ale } from '../types/ale'
+import type { Ale } from '../types/ale'
 import DeleteButton from './DeleteButton'
 
 type Props = {

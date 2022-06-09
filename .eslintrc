@@ -1,0 +1,8 @@
+{
+  "extends": ["react-app", "prettier"],
+  "ignorePatterns": ["**/node_modules/**", "**/dist/**"],
+
+  "rules": {
+    "@typescript-eslint/consistent-type-imports": "error"
+  }
+}

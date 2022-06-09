@@ -12,7 +12,7 @@ import * as React from 'react'
 import AleForm from '../app/components/AleForm'
 import DeleteButton from '../app/components/DeleteButton'
 import { useAppContext } from '../app/state/useAppContext'
-import { Ale } from '../app/types/ale'
+import type { Ale } from '../app/types/ale'
 
 type Props = {
   ale: Ale
