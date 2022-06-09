@@ -8,6 +8,7 @@ import {
 import * as React from 'react'
 import { useForm } from 'react-hook-form'
 import { Ale } from '../types/ale'
+import DeleteButton from './DeleteButton'
 
 type Props = {
   ale: Ale
@@ -67,14 +68,9 @@ const AleForm = (props: Props) => {
 
       <ButtonGroup>
         <Button type="submit">Save Changes</Button>
-        <Button
-          as="a"
-          href={`/ale/${ale.id}`}
-          type="submit"
-          formMethod="delete"
-        >
+        <DeleteButton action={`/ale/${ale.id}`} token={props.token}>
           Delete
-        </Button>
+        </DeleteButton>
         <Button as="a" href="/">
           Go Back
         </Button>

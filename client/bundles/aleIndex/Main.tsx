@@ -6,10 +6,13 @@ import {
   Flex,
   Heading,
   Image,
-  Text
+  Text,
+  Wrap,
+  WrapItem
 } from '@chakra-ui/react'
 import { css } from '@emotion/css'
 import * as React from 'react'
+import Card from '../app/components/Card'
 import { useAppContext } from '../app/state/useAppContext'
 
 type Props = {
@@ -35,35 +38,47 @@ const Main = (props: Props) => {
     >
       <Box backgroundColor={'white'} borderRadius="10px" padding={4}>
         <Heading as="h3">
-          Hello Stranger! The Alehouse is opening soon in the Ruby Railhouse!
+          Hello Stranger! Welcome to the Ruby Railhouse, your best selection for
+          ruby-themed ale
         </Heading>
         <Button as="a" href="/ale/new">
           New Drink!
         </Button>
 
-        {props.aleList.map((ale) => (
-          <Box>
-            <Heading as="h3" textTransform={'uppercase'}>
-              {ale.title}
-            </Heading>
-            <Image
-              src={ale?.imageUrl ?? 'https://via.placeholder.com/300'}
-              width={'300px'}
-            ></Image>
-            <Text>{ale.description}</Text>
-            <Text>{ale.price}</Text>
+        <Wrap paddingY={2}>
+          {props.aleList.map((ale) => (
+            <WrapItem>
+              <Card>
+                <Image
+                  src={ale?.imageUrl ?? 'https://via.placeholder.com/300'}
+                  width={'400px'}
+                ></Image>
+                <Heading as="h3" padding={2} textTransform={'uppercase'}>
+                  {ale.title}
+                </Heading>
+                <Box
+                  padding={2}
+                  display="flex"
+                  flexDirection={'column'}
+                  width="100%"
+                >
+                  <Text>{ale.description}</Text>
+                  <Text fontWeight={'bold'}>{`$${ale.price}`}</Text>
+                </Box>
 
-            <Divider paddingY={2}></Divider>
-            <ButtonGroup>
-              <Button as="a" href={`/ale/${ale.id}`}>
-                View
-              </Button>
-              <Button as="a" href={`/ale/${ale.id}/edit`}>
-                Edit
-              </Button>
-            </ButtonGroup>
-          </Box>
-        ))}
+                <Divider></Divider>
+                <ButtonGroup padding={2}>
+                  <Button as="a" href={`/ale/${ale.id}`}>
+                    View
+                  </Button>
+                  <Button as="a" href={`/ale/${ale.id}/edit`}>
+                    Edit
+                  </Button>
+                </ButtonGroup>
+              </Card>
+            </WrapItem>
+          ))}
+        </Wrap>
       </Box>
     </Flex>
   )
