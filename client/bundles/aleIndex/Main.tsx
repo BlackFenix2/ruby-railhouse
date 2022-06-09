@@ -48,7 +48,7 @@ const Main = (props: Props) => {
 
         <Wrap paddingY={2}>
           {props.aleList.map((ale) => (
-            <WrapItem>
+            <WrapItem maxWidth={'400px'}>
               <Card>
                 <Image
                   src={ale?.imageUrl ?? 'https://via.placeholder.com/300'}
