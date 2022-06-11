@@ -3,7 +3,8 @@ import {
   Button,
   FormControl,
   FormLabel,
-  Input
+  Input,
+  Textarea
 } from '@chakra-ui/react'
 import * as React from 'react'
 import { useForm } from 'react-hook-form'
@@ -20,7 +21,7 @@ type Props = {
 }
 
 const AleForm = (props: Props) => {
-  const { ale, token, action = '/ale' } = props
+  const { ale, token, action = '/ale', isReadonly, method } = props
   const {
     register,
     formState: { errors }
@@ -30,16 +31,12 @@ const AleForm = (props: Props) => {
 
   return (
     <form action={action} acceptCharset="UTF-8" method="post">
-      <fieldset disabled={props.isReadonly}>
+      <fieldset disabled={isReadonly}>
         {/* append http method for ruby on rails _method input */}
-        <input name="_method" type="hidden" value={props.method}></input>
+        <input name="_method" type="hidden" value={method}></input>
 
         {/* pass anti-forgery token */}
-        <input
-          type="hidden"
-          name="authenticity_token"
-          value={props.token}
-        ></input>
+        <input type="hidden" name="authenticity_token" value={token}></input>
 
         <FormControl>
           <FormLabel>
@@ -51,7 +48,7 @@ const AleForm = (props: Props) => {
         <FormControl>
           <FormLabel>
             Description
-            <Input {...register('description')} />
+            <Textarea {...register('description')} />
           </FormLabel>
         </FormControl>
 

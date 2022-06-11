@@ -8,19 +8,7 @@ export interface AppProps {
   railsContext: any
 }
 
-const theme = extendTheme({
-  styles: {
-    global: {
-      // add backgorund image
-      body: {
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundImage: 'url(/background.jpg)'
-      }
-    }
-  }
-})
+const theme = extendTheme({})
 
 const AppContainer = (props: AppProps) => {
   return (

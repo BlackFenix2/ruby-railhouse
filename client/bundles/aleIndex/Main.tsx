@@ -2,6 +2,8 @@ import {
   Box,
   Button,
   ButtonGroup,
+  Center,
+  Container,
   Divider,
   Flex,
   Heading,
@@ -14,6 +16,7 @@ import * as React from 'react'
 import Card from '../app/components/Card'
 import { FaPen, FaEye, FaPlus } from 'react-icons/fa'
 import type { Ale } from '../app/types/ale'
+import BackgroundImage from '../app/components/BackgroundImage'
 
 type Props = {
   aleList: Ale[]
@@ -21,31 +24,54 @@ type Props = {
 
 const Main = (props: Props) => {
   return (
-    <Flex
-      as="main"
-      flexDirection="column"
-      alignItems={'center'}
-      justifyContent={'center'}
-      flexGrow={1}
-    >
-      <Box backgroundColor={'white'} borderRadius="10px" padding={4}>
-        <Heading as="h3" marginBottom={2}>
-          Hello Stranger! Welcome to the Ruby Railhouse, your best selection for
-          ruby-themed ale
-        </Heading>
-        <Button as="a" href="/ale/new" leftIcon={<FaPlus />}>
-          New Drink!
-        </Button>
+    <Box width={'100%'} backgroundColor="white">
+      <BackgroundImage width="100%" height="500px">
+        <Center flexDirection={'column'} height="100%">
+          <Card
+            display="flex"
+            flexDirection="column"
+            alignItems={'center'}
+            backgroundColor="blackAlpha.800"
+            color={'white'}
+            padding={4}
+            border="none"
+          >
+            <Heading as="h1">Hello Stranger!</Heading>
+            <Text marginBottom={2}>
+              Welcome to the Ruby Railhouse, your best selection for ruby-themed
+              ale
+            </Text>
+          </Card>
+        </Center>
+      </BackgroundImage>
+
+      <Container
+        backgroundColor={'white'}
+        borderRadius="10px"
+        padding={4}
+        maxWidth="container.xl"
+      >
+        <Flex alignItems={'center'} justifyContent="space-around">
+          <Heading as="h1" marginBottom={2}>
+            Ale List
+          </Heading>
+          <Button as="a" href="/ale/new" leftIcon={<FaPlus />}>
+            New Drink!
+          </Button>
+        </Flex>
 
         <Wrap paddingY={2}>
           {props.aleList.map((ale) => (
-            <WrapItem maxWidth={'400px'}>
+            <WrapItem maxWidth={'400px'} key={ale.id}>
               <Card>
                 <Image
-                  src={ale?.imageUrl ?? 'https://via.placeholder.com/300'}
-                  width={'400px'}
+                  src={ale?.imageUrl ?? 'https://via.placeholder.com/400/600'}
+                  minWidth={'400px'}
+                  maxWidth={'400px'}
+                  minHeight={'600px'}
+                  maxHeight={'600px'}
                 ></Image>
-                <Heading as="h3" padding={2} textTransform={'uppercase'}>
+                <Heading as="h2" padding={2} textTransform={'uppercase'}>
                   {ale.title}
                 </Heading>
                 <Box
@@ -54,7 +80,7 @@ const Main = (props: Props) => {
                   flexDirection={'column'}
                   width="100%"
                 >
-                  <Text>{ale.description}</Text>
+                  <Text noOfLines={1}>{ale.description}</Text>
                   <Text fontWeight={'bold'}>{`$${Number(ale.price).toFixed(
                     2
                   )}`}</Text>
@@ -77,8 +103,8 @@ const Main = (props: Props) => {
             </WrapItem>
           ))}
         </Wrap>
-      </Box>
-    </Flex>
+      </Container>
+    </Box>
   )
 }
 

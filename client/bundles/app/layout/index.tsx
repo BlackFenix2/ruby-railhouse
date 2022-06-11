@@ -11,7 +11,20 @@ const Layout = (props: Props) => {
   return (
     <Flex direction={'column'} minH={'100vh'}>
       <Header />
-      {props.children}
+      <Flex
+        as="main"
+        flexDirection="column"
+        alignItems={'center'}
+        justifyContent={'center'}
+        flexGrow={1}
+        backgroundImage="url(/background.jpg)"
+        backgroundPosition="center"
+        backgroundSize={'cover'}
+        backgroundRepeat="no-repeat"
+      >
+        {props.children}
+      </Flex>
+
       <Footer />
     </Flex>
   )

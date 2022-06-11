@@ -80,3 +80,5 @@ end
 gem 'mini_racer', platforms: :ruby
 
 gem 'pg', '~> 1.3'
+
+gem "meta-tags", "~> 2.16"
