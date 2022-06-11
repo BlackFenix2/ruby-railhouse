@@ -17,7 +17,7 @@ module AleHelper
         description: 'Take a stop off the Rails track and enjoy a ale.',
         type: 'website',
         url: request.original_url,
-        image: image_url('banner.jpeg')
+        image: image_url('banner.jpg')
       }
 
     }
