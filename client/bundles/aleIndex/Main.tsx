@@ -66,8 +66,11 @@ const Main = (props: Props) => {
               <Card>
                 <Image
                   src={ale?.imageUrl ?? 'https://via.placeholder.com/400/600'}
+                  alt={`${ale?.title} image`}
+                  htmlWidth={'600px'}
                   minWidth={'400px'}
                   maxWidth={'400px'}
+                  htmlHeight={'400px'}
                   minHeight={'600px'}
                   maxHeight={'600px'}
                 ></Image>

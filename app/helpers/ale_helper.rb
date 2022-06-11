@@ -19,7 +19,6 @@ module AleHelper
         url: request.original_url,
         image: image_url('banner.jpg')
       }
-
     }
   end
 end
