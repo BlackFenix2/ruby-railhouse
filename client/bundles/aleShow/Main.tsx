@@ -10,8 +10,6 @@ import {
 import { css } from '@emotion/css'
 import * as React from 'react'
 import AleForm from '../app/components/AleForm'
-import BackgroundImage from '../app/components/BackgroundImage'
-import DeleteButton from '../app/components/DeleteButton'
 import { useAppContext } from '../app/state/useAppContext'
 import type { Ale } from '../app/types/ale'
 
@@ -30,7 +28,6 @@ const Main = (props: Props) => {
         ale={props.ale}
         token={props.token}
         isReadonly
-        method="patch"
         action={`/ale/${props.ale.id}`}
       ></AleForm>
     </Box>

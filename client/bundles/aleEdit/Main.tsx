@@ -1,17 +1,7 @@
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Divider,
-  Flex,
-  Heading,
-  Text
-} from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import { css } from '@emotion/css'
 import * as React from 'react'
 import AleForm from '../app/components/AleForm'
-import BackgroundImage from '../app/components/BackgroundImage'
-import { useAppContext } from '../app/state/useAppContext'
 import type { Ale } from '../app/types/ale'
 
 type Props = {
@@ -20,8 +10,6 @@ type Props = {
 }
 
 const Main = (props: Props) => {
-  const { ale } = props
-  console.log(props.token)
   return (
     <Box backgroundColor={'white'} borderRadius="10px" padding={4}>
       <AleForm

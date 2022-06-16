@@ -23,7 +23,7 @@ const DeleteButton = (props: Props) => {
         value={props.token}
       ></input>
       <input name="_method" type="hidden" value="delete" />
-      <Button type="submit" leftIcon={<FaTrash />}>
+      <Button type="submit" data-confirm="Are you sure?" leftIcon={<FaTrash />}>
         {props.children}
       </Button>
     </form>
